@@ -1,4 +1,5 @@
 extends RigidBody2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	pass 
@@ -7,4 +8,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var is_sword_active = Input.is_action_just_pressed("Character_Sword")
 	if is_sword_active:
-		var linear_velocity = 130
+		animation_player.play("sword_flip")
+		linear_velocity.x = 130
