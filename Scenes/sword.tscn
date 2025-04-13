@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://b08gyj4lip4pt"]
+
+[ext_resource type="Texture2D" uid="uid://c7chvy3mm0lpr" path="res://Assests/SWORDS PACK/sword1.png" id="1_goa0h"]
+[ext_resource type="Script" uid="uid://dd8teh08c0ft7" path="res://Scripts/animation_player.gd" id="2_6wdhb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wdhb"]
+radius = 0.725374
+height = 4.0
+
+[sub_resource type="Animation" id="Animation_d6wag"]
+resource_name = "sword_flip"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.28319, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_kb2vl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j4cb"]
+_data = {
+&"RESET": SubResource("Animation_kb2vl"),
+&"sword_flip": SubResource("Animation_d6wag")
+}
+
+[node name="sword" type="RigidBody2D"]
+rotation = -6.28319
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_goa0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.25, 0.9)
+shape = SubResource("CapsuleShape2D_6wdhb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6j4cb")
+}
+speed_scale = 2.0
+script = ExtResource("2_6wdhb")
