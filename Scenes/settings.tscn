@@ -1,9 +1,76 @@
-[gd_scene load_steps=0 format=3 uid="uid://b2jvkrhddslu1"]
+[gd_scene load_steps=5 format=3 uid="uid://b2jvkrhddslu1"]
+
+[ext_resource type="Script" uid="uid://cwwo8ah235hs2" path="res://Scripts/settings.gd" id="1_lhmql"]
+[ext_resource type="Texture2D" uid="uid://c2kyk8lmqwle0" path="res://Assests/sprites/summer.png" id="2_aaqfp"]
+[ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="3_j2dne"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kysc"]
+texture = ExtResource("2_aaqfp")
+modulate_color = Color(0.28485, 0.28485, 0.28485, 1)
 
 [node name="settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhmql")
+
+[node name="Backgorund_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6kysc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.5
+offset_top = -291.5
+offset_right = 512.5
+offset_bottom = 291.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="topic" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.5
+offset_top = 61.0
+offset_right = 216.5
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("3_j2dne")
+theme_override_font_sizes/font_size = 85
+text = "SETTINGS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.5
+offset_top = -185.0
+offset_right = 485.5
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
