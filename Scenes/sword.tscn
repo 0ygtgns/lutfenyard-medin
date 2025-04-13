@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b08gyj4lip4pt"]
 
+[ext_resource type="Script" uid="uid://c46sqmbdedrf3" path="res://Scripts/sword.gd" id="1_6wdhb"]
 [ext_resource type="Texture2D" uid="uid://c7chvy3mm0lpr" path="res://Assests/SWORDS PACK/sword1.png" id="1_goa0h"]
-[ext_resource type="Script" uid="uid://dd8teh08c0ft7" path="res://Scripts/animation_player.gd" id="2_6wdhb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wdhb"]
 radius = 0.725374
@@ -46,6 +46,7 @@ _data = {
 
 [node name="sword" type="RigidBody2D"]
 rotation = -6.28319
+script = ExtResource("1_6wdhb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -62,4 +63,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_6j4cb")
 }
 speed_scale = 2.0
-script = ExtResource("2_6wdhb")
