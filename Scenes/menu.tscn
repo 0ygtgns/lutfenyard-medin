@@ -1,9 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpcqiiqvb0rq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dpcqiiqvb0rq7"]
 
 [ext_resource type="Script" uid="uid://cielj8o5woeep" path="res://Scripts/menu.gd" id="1_1rerr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rerr"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rerr"]
 bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.501406, 0.501407, 0.501406, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -31,12 +42,20 @@ script = ExtResource("1_1rerr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 237.0
+offset_bottom = 65.0
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Play"
