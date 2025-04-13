@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpcqiiqvb0rq7"]
+[gd_scene load_steps=9 format=3 uid="uid://dpcqiiqvb0rq7"]
 
-[ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://euo0j48404pp" path="res://Scripts/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://c2kyk8lmqwle0" path="res://Assests/sprites/summer.png" id="1_xhh6f"]
+[ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="3_cayip"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cayip"]
 texture = ExtResource("1_xhh6f")
@@ -43,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1rerr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -76,7 +78,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_fonts/font = ExtResource("3_cayip")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
@@ -93,7 +95,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_fonts/font = ExtResource("3_cayip")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
@@ -110,7 +112,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_fonts/font = ExtResource("3_cayip")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
@@ -125,8 +127,12 @@ offset_left = 149.0
 offset_top = 88.0
 offset_right = 1010.0
 offset_bottom = 315.0
-theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_fonts/font = ExtResource("3_cayip")
 theme_override_font_sizes/font_size = 80
 text = "LUTFEN YARDIM EDİN
 "
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
