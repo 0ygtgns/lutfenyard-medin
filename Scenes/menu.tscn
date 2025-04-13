@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpcqiiqvb0rq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dpcqiiqvb0rq7"]
+
+[ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="1_1rerr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rerr"]
 
@@ -38,9 +40,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 237.0
-offset_bottom = 65.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -60.0
+offset_right = 191.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -50,9 +62,57 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Play"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1rerr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 88.0
+offset_right = 1010.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 80
+text = "LUTFEN YARDIM EDİN
+"
+horizontal_alignment = 1
