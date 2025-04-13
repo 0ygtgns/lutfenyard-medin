@@ -51,11 +51,12 @@ script = ExtResource("1_6wdhb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_goa0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
-scale = Vector2(4, 22)
+scale = Vector2(2, 11)
 shape = SubResource("CapsuleShape2D_6wdhb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
