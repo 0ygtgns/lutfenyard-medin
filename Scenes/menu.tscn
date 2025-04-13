@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1rerr")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background_panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,7 +121,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Topic" type="Label" parent="."]
 layout_mode = 0
 offset_left = 149.0
 offset_top = 88.0
