@@ -46,7 +46,7 @@ _data = {
 rotation = -6.28319
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
-collision_mask = 5
+collision_mask = 21
 slide_on_ceiling = false
 script = ExtResource("1_2e0ll")
 
