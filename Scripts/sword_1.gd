@@ -11,9 +11,6 @@ var spawnPos: Vector2
 func _ready():
 	global_position = spawnPos
 	rotation = movement_direction.angle()
-	# Set collision layers (enemy weapon)
-	collision_layer = 0b10000  # layer 4 (enemy_weapon)
-	collision_mask = 0b0001    # layer 1 (player)
 
 func _physics_process(delta):
 	velocity = movement_direction * SPEED
