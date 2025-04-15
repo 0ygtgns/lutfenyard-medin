@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://kx8n26y7dxwh"]
+[gd_scene load_steps=7 format=3 uid="uid://vsy22gbqfnmx"]
 
-[ext_resource type="Script" uid="uid://q66htg2jkw1j" path="res://Scripts/sword.gd" id="1_goa0h"]
-[ext_resource type="Texture2D" uid="uid://cc0s6lf6citce" path="res://Assests/SWORDS PACK/sword3.png" id="2_6wdhb"]
+[ext_resource type="Script" uid="uid://gfe76qqq4vf3" path="res://Scripts/sword_1.gd" id="1_2e0ll"]
+[ext_resource type="Texture2D" uid="uid://nmq3p3h5v5en" path="res://Assests/SWORDS PACK/sword2.png" id="2_32rec"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wdhb"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tdmi1"]
 
-[sub_resource type="Animation" id="Animation_6wdhb"]
+[sub_resource type="Animation" id="Animation_32rec"]
 resource_name = "sword_flip"
 loop_mode = 1
 tracks/0/type = "value"
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [-6.28319, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_d6wag"]
+[sub_resource type="Animation" id="Animation_tdmi1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -36,31 +36,31 @@ tracks/0/keys = {
 "values": [-6.28319]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb2vl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ntt82"]
 _data = {
-&"RESET": SubResource("Animation_d6wag"),
-&"sword_flip": SubResource("Animation_6wdhb")
+&"RESET": SubResource("Animation_tdmi1"),
+&"sword_flip": SubResource("Animation_32rec")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = -6.28319
 scale = Vector2(0.5, 0.5)
-collision_layer = 4
-collision_mask = 10
+collision_layer = 2
+collision_mask = 5
 slide_on_ceiling = false
-script = ExtResource("1_goa0h")
+script = ExtResource("1_2e0ll")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_6wdhb")
+texture = ExtResource("2_32rec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
 scale = Vector2(0.6, 3)
-shape = SubResource("CapsuleShape2D_6wdhb")
+shape = SubResource("CapsuleShape2D_tdmi1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_kb2vl")
+&"": SubResource("AnimationLibrary_ntt82")
 }
 speed_scale = 2.0

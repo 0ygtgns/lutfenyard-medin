@@ -43,6 +43,8 @@ animations = [{
 radius = 5.09902
 
 [node name="enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_hghv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

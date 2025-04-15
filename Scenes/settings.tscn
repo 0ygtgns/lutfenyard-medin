@@ -119,6 +119,7 @@ text = "Mute"
 [node name="resolutions" type="Node" parent="."]
 
 [node name="resolutions2" type="OptionButton" parent="."]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 404.0
 offset_right = 572.0
@@ -133,6 +134,7 @@ popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
 [node name="mute3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 343.0
 offset_right = 257.0

@@ -1,22 +1,29 @@
 extends CharacterBody2D
 
+@export var SPEED = 130
+@onready var projectile = load("res://Scenes/sword.tscn")
+@onready var game: Node2D = $".."
 
-const SPEED = 300.0
+var move_direction = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-
-
-
-
 	var directionX := Input.get_axis("Character_Left", "Character_Right")
 	var directionY := Input.get_axis("Character_Top", "Character_Bottom")
-	if directionX:
-		velocity.x = directionX * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if directionY:
-		velocity.y = directionY * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+
+	move_direction = Vector2(directionX, directionY).normalized()
+	velocity = move_direction * SPEED
+
+	if move_direction.length_squared() > 0:
+		rotation = move_direction.angle() # Get the angle in radians
 
 	move_and_slide()
+
+func shoot():
+	var instance = projectile.instantiate()
+	instance.movement_direction = move_direction.normalized()  # Pass Vector2 directly
+	instance.spawnPos = global_position
+	game.add_child.call_deferred(instance)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Character_Sword"):
+		shoot()
