@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://16vvhx6hjk4s"]
+[gd_scene load_steps=11 format=3 uid="uid://16vvhx6hjk4s"]
 
 [ext_resource type="Script" uid="uid://do8qfk27yuyp4" path="res://Scripts/paused_menu.gd" id="1_8da32"]
 [ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="1_qxfps"]
+[ext_resource type="Shader" uid="uid://dprc0fk2hco4i" path="res://Assests/shader/paused_menu.gdshader" id="2_l2rry"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_npcx0"]
+shader = ExtResource("2_l2rry")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npcx0"]
 bg_color = Color(0.321569, 0.321569, 0.321569, 0.352941)
@@ -38,6 +42,7 @@ shadow_offset = Vector2(3, 3)
 
 [sub_resource type="Animation" id="Animation_qxfps"]
 resource_name = "blur"
+length = 0.3
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8da32"]
 _data = {
@@ -53,6 +58,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8da32")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_npcx0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -143,4 +157,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_8da32")
 }
 
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
