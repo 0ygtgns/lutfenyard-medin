@@ -1,10 +1,15 @@
 extends CharacterBody2D
-
+@onready var health_bar = $HealthBar
 @export var SPEED = 130
+@export var MAX_HEALTH = 100
+var current_health = MAX_HEALTH
 @onready var projectile = load("res://Scenes/sword1.tscn")
 @onready var game: Node2D = $".."
 
 var move_direction = Vector2.ZERO
+
+func _ready() -> void:
+	add_to_group("enemy")
 
 func _physics_process(delta: float) -> void:
 	var directionX := Input.get_axis("Enemy_Left", "Enemy_Right")
@@ -27,3 +32,13 @@ func shoot():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Enemy__Sword"):
 		shoot()
+
+func take_damage(amount):
+	current_health -= amount
+	health_bar.value = current_health
+	if current_health <= 0:
+		die()
+
+func die():
+	queue_free()
+	# Add death effects here
