@@ -1,9 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6t5k30qf3u16"]
+[gd_scene load_steps=15 format=3 uid="uid://b6t5k30qf3u16"]
 
 [ext_resource type="Script" uid="uid://cyudqoi6061sk" path="res://Scripts/character.gd" id="1_ushfy"]
 [ext_resource type="Texture2D" uid="uid://cmlso6h2dsl84" path="res://Assests/sprites/knight.png" id="2_owm7s"]
 [ext_resource type="Texture2D" uid="uid://lleljia07kp2" path="res://Assests/sprites/empty_bar.png" id="3_nytcm"]
 [ext_resource type="Texture2D" uid="uid://botdl1r2uadom" path="res://Assests/sprites/health_bar.png" id="4_ejsiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ess"]
+atlas = ExtResource("2_owm7s")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbia7"]
+atlas = ExtResource("2_owm7s")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7hj"]
+atlas = ExtResource("2_owm7s")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iw6i"]
+atlas = ExtResource("2_owm7s")
+region = Rect2(96, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
 atlas = ExtResource("2_owm7s")
@@ -25,6 +41,23 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ess")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iw6i")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nytcm")
 }, {
 "duration": 1.0,
@@ -37,7 +70,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_reotu")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -52,7 +85,8 @@ script = ExtResource("1_ushfy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_a5ess")
-autoplay = "default"
+animation = &"hit"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)

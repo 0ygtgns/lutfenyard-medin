@@ -5,6 +5,7 @@ extends CharacterBody2D
 var current_health = MAX_HEALTH
 @onready var projectile = load("res://Scenes/sword.tscn")
 @onready var game: Node2D = $".."
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var move_direction = Vector2.ZERO
 
@@ -37,6 +38,7 @@ func _input(event: InputEvent) -> void:
 func take_damage(amount):
 	current_health -= amount
 	health_bar.value = current_health
+	
 	if current_health <= 0:
 		die()
 
