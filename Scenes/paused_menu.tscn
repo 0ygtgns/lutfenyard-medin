@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://16vvhx6hjk4s"]
+[gd_scene load_steps=9 format=3 uid="uid://16vvhx6hjk4s"]
 
+[ext_resource type="Script" uid="uid://do8qfk27yuyp4" path="res://Scripts/paused_menu.gd" id="1_8da32"]
 [ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="1_qxfps"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npcx0"]
@@ -51,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8da32")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -140,3 +142,5 @@ text = "Quit"
 libraries = {
 &"": SubResource("AnimationLibrary_8da32")
 }
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
