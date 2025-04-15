@@ -14,6 +14,11 @@ config/name="lutfenyardımedin"
 run/main_scene="uid://dpcqiiqvb0rq7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 Character_Left={
