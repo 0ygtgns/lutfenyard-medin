@@ -151,5 +151,5 @@ text = "back"
 
 [connection signal="value_changed" from="volume_bar/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="mute2/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_item_selected"]
 [connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_2_item_selected"]
+[connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_item_selected"]

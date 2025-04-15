@@ -45,6 +45,7 @@ animations = [{
 radius = 5.09902
 
 [node name="enemy" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_hghv2")
@@ -59,6 +60,7 @@ position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_auwsv")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 88.0

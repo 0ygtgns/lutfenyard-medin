@@ -45,6 +45,7 @@ animations = [{
 radius = 6.08276
 
 [node name="character" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_mask = 10
 script = ExtResource("1_ushfy")
 
