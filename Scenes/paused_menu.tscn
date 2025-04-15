@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://16vvhx6hjk4s"]
+
+[ext_resource type="FontFile" uid="uid://blp7rok3bglsw" path="res://Assests/fonts/NothingTodayDemoRegular.ttf" id="1_qxfps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npcx0"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.352941)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxfps"]
+bg_color = Color(0.347817, 0.347817, 0.347817, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8da32"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2rry"]
+bg_color = Color(0.43134, 0.43134, 0.43134, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_qxfps"]
+resource_name = "blur"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8da32"]
+_data = {
+&"blur": SubResource("Animation_qxfps")
+}
+
+[node name="paused_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -247.5
+offset_right = 252.0
+offset_bottom = 247.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_npcx0")
+
+[node name="Topic" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = 20.0
+offset_right = 338.0
+offset_bottom = -401.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qxfps")
+theme_override_font_sizes/font_size = 80
+text = "LUTFEN YARDIM EDİN
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -151.5
+offset_right = 159.5
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_fonts/font = ExtResource("1_qxfps")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8da32")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2rry")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_fonts/font = ExtResource("1_qxfps")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8da32")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2rry")
+text = "Restart"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_fonts/font = ExtResource("1_qxfps")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qxfps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8da32")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2rry")
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8da32")
+}

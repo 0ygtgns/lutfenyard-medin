@@ -118,8 +118,7 @@ text = "Mute"
 
 [node name="resolutions" type="Node" parent="."]
 
-[node name="resolutions2" type="OptionButton" parent="."]
-layout_mode = 0
+[node name="resolutions2" type="OptionButton" parent="resolutions"]
 offset_left = 118.0
 offset_top = 404.0
 offset_right = 572.0
@@ -133,8 +132,7 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
-[node name="mute3" type="Label" parent="."]
-layout_mode = 0
+[node name="mute3" type="Label" parent="resolutions"]
 offset_left = 120.0
 offset_top = 343.0
 offset_right = 257.0
@@ -143,6 +141,15 @@ theme_override_fonts/font = ExtResource("3_j2dne")
 theme_override_font_sizes/font_size = 36
 text = "Resolutions"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 475.0
+offset_right = 1072.0
+offset_bottom = 591.0
+text = "back"
+
 [connection signal="value_changed" from="volume_bar/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="mute2/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="item_selected" from="resolutions2" to="." method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_2_item_selected"]
