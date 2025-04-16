@@ -141,7 +141,7 @@ theme_override_fonts/font = ExtResource("3_j2dne")
 theme_override_font_sizes/font_size = 36
 text = "Resolutions"
 
-[node name="Button" type="Button" parent="."]
+[node name="back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 892.0
 offset_top = 475.0
@@ -153,3 +153,4 @@ text = "back"
 [connection signal="toggled" from="mute2/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_2_item_selected"]
 [connection signal="item_selected" from="resolutions/resolutions2" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

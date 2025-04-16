@@ -6,6 +6,8 @@ var current_health = MAX_HEALTH
 @onready var projectile = load("res://Scenes/sword1.tscn")
 @onready var game: Node2D = $".."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var winner_page: Node2D = $"../winner_page"
+
 
 var move_direction = Vector2.ZERO
 var is_hit := false
@@ -58,6 +60,7 @@ func take_damage(amount):
 	
 	if current_health <= 0:
 		die()
+		winner_page.winner_character()
 	else:
 		# Return to appropriate animation after hit
 		if move_direction.length_squared() > 0:

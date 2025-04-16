@@ -179,10 +179,10 @@ texture = ExtResource("2_qxrlw")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="character" parent="." instance=ExtResource("3_3dryh")]
-position = Vector2(280, 86)
+position = Vector2(-469, -12)
 
 [node name="enemy" parent="." instance=ExtResource("4_wowpa")]
-position = Vector2(-174, -118)
+position = Vector2(506, 3)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1l0tm")
