@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4fi0vjvlvvel"]
+
+[ext_resource type="Script" uid="uid://cspt6pmtuj75q" path="res://Scripts/winner_page.gd" id="1_474rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_474rp"]
+bg_color = Color(0.347817, 0.347817, 0.347817, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68nbv"]
+bg_color = Color(0.347817, 0.347817, 0.347817, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyvi"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lwwe"]
+bg_color = Color(0.43134, 0.43134, 0.43134, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
+
+[node name="winner_page" type="Node2D"]
+position = Vector2(586, 329)
+script = ExtResource("1_474rp")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -411.5
+offset_top = -271.5
+offset_right = 411.5
+offset_bottom = 271.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="winner" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -221.0
+offset_right = 329.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 96
+text = "winner bla bla"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+anchors_preset = -1
+offset_left = -212.0
+offset_top = -3.0
+offset_right = 213.0
+offset_bottom = 157.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_474rp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_68nbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hgyvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lwwe")
+text = "Restart"
+
+[node name="main_menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_474rp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_68nbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hgyvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lwwe")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
